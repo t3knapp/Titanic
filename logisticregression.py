@@ -1,5 +1,4 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np
 
 class Logistic(object):
     """Titanic V1 - Binary Classifier using Logistic Regression
@@ -42,9 +41,9 @@ class Logistic(object):
 
         for i in range(self.n_iter):
             output = self.sigmoid(self.net_input(X))
-            errors = (y - output)
-            self.w_[1:] += self.eta * X.T.dot(errors)
-            self.w_[0] += self.eta * errors.sum()
+            errors_ = (y - output)
+            self.w_[1:] += self.eta * X.T.dot(errors_)
+            self.w_[0] += self.eta * errors_.sum()
 
     def sigmoid(self, z):
         """Sigmoid function used in logistic regression
